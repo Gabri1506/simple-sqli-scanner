@@ -1,24 +1,24 @@
 # Simple-sqli-scanner
 A Python-based reconnaissance and SQL Injection vulnerability scanner supporting static HTML, URL fragments, and Playwright dynamic analysis.
 
-# Overview
+## Overview
 
 this tool is an automated security tool designed to identify and test injection points within web applications. It goes beyond static analysis by combining traditional crawling with dynamic browser emulation to uncover hidden parameters and API endpoints
 
-# Prerequisites
+## Prerequisites
 
 Python 3.14
 
-# core libraries
+## core libraries
 - requests: for http communication
 - BeatifulSoup: for html parsing
 - playwirght: for browser automation
 
 built in module: urllib3, time, json, re, concurrent.futures
 
-# How it works
+## How it works
 
-1. Reconnaissance (Multi-Tier Discovery)
+1. **Reconnaissance (Multi-Tier Discovery)**
 the tool start scanning the given url for input boxes and it does it in three way:
     a. html scanning: the tool parse the html of the website and search for standard input tags 
     b. url analysis: the tool parse and deconstructs the url, search and extrac any query inside it
@@ -32,7 +32,7 @@ Data Captured per Entry Point:
 - the required headers
 
 
-2. Injection Engine
+2. **Injection Engine**
 
     a. preparation:
       - Deduplication: the tool after receiving the information about the input boxes tries to remove possible duplicates (if something was find).
@@ -49,7 +49,7 @@ Data Captured per Entry Point:
      2. time based compares response times against the Baseline with a threshold of default + 4.5 s 
      3. boolean based watch the output status and the lenght of the site between a false payload and a true payload
 
-3. output
+3. **output**
 Vulnerabilities are logged in real-time to the terminal, with:
     - Vulnerability Type (e.g., Time-Based).
     - Successful Payload used.
@@ -58,18 +58,18 @@ Vulnerabilities are logged in real-time to the terminal, with:
 
 
 
-# Usage
+## Usage
 
-1. scan modes
+1. **scan modes**
 - mode 1 Stops the reconnaissance phase as soon as the first entry point is found. It prioritizes speed and low resource consumption.
 - mode 2 Executes all three scanning types (HTML, URL, Browser) and generates a target list without duplicates.
 
 
-2. injection modes 
+2. **injection modes** 
 - mode 1 Sends requests using only captured headers and standard methods. Fastest, but can be blocked by anti bot website security
 - mode 2 Activates Session Camouflage. Creates a temporary session to fetch valid CSRF tokens/cookies before launching the attack. 
 
-# Installation & Quick Start
+## Installation & Quick Start
 
 1. **Clone the repository:**
    ```bash
