@@ -1,22 +1,22 @@
-# simple-sqli-scanner
+## simple-sqli-scanner
 A Python-based reconnaissance and SQL Injection vulnerability scanner supporting static HTML, URL fragments, and Playwright dynamic analysis.
 
-Overview
+# Overview
 
 this tool is an automated security tool designed to identify and test injection points within web applications. It goes beyond static analysis by combining traditional crawling with dynamic browser emulation to uncover hidden parameters and API endpoints
 
-Prerequisites
+# Prerequisites
 
 Python 3.14
 
-core libraries
+# core libraries
 - requests: for http communication
 - BeatifulSoup: for html parsing
 - playwirght: for browser automation
 
 built in module: urllib3, time, json, re, concurrent.futures
 
-How it works
+# How it works
 
 1. Reconnaissance (Multi-Tier Discovery)
 the tool start scanning the given url for input boxes and it does it in three way:
@@ -58,7 +58,7 @@ Vulnerabilities are logged in real-time to the terminal, with:
 
 
 
-Usage
+# Usage
 
 1. scan modes
 - mode 1 Stops the reconnaissance phase as soon as the first entry point is found. It prioritizes speed and low resource consumption.
@@ -69,6 +69,20 @@ Usage
 - mode 1 Sends requests using only captured headers and standard methods. Fastest, but can be blocked by anti bot website security
 - mode 2 Activates Session Camouflage. Creates a temporary session to fetch valid CSRF tokens/cookies before launching the attack. 
 
+# Installation & Quick Start
 
-Legal Disclaimer
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Gabri1506/simple-sqli-scanner
+   cd simple-sqli-scanner
+2. **Install dependencies**
+    ```bash
+    pip install requests beautifulsoup4 playwright
+    playwright install chromium
+3. **Configure and run the scanner:**
+    Open main.py, set your target URL in the target variable, and run:
+    ```bash
+    python main.py
+    
+# Legal Disclaimer
 IMPORTANT: This tool is developed for educational purposes and authorized ethical hacking/penetration testing only. Usage of this software against targets without explicit written permission is illegal and punishable by law. The developer assumes no liability for any misuse of this tool.
